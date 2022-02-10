@@ -21,7 +21,7 @@ export class AuthorService {
 
     // store the authors
     public async storeAuthors(author: AuthorDTO): Promise<Author> {
-        const newAuthor = new this.authorModel(author);
+        const newAuthor = await new this.authorModel(author);
         return newAuthor.save();
     }
 
