@@ -7,16 +7,16 @@ import { CategoryModule } from './Category/category.module';
 import { DatabaseModule } from './Database/database.module';
 // import { BlogModule } from './Blog/blog.module';
 
-// import { TagModule } from './Tag/tag.module';
+import { TagModule } from './Tag/tag.module';
 
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [AuthorModule, CategoryModule, DatabaseModule,
+  imports: [AuthorModule, CategoryModule, DatabaseModule, TagModule,
     ConfigModule.forRoot({
       envFilePath: '.env',
     })
-    // , BlogModule, TagModule
+    // , BlogModule,
   ],
   controllers: [AppController],
   providers: [AppService],

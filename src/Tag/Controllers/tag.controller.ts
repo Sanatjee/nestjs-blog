@@ -42,7 +42,7 @@ export class TagsController {
     }
 
     // delete a tag
-    @Delete(':id')
+    @Delete(':id/destroy')
     async destroy(@Res() res, @Param('id') id: string) {
         const data = await this.tagService.deleteSingleTag(id);
         return res.status(HttpStatus.OK).json(data);
